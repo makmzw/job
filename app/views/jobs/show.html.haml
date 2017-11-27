@@ -1,0 +1,7 @@
+%h1= @job.title
+%p= @job.description
+%p= @job.company
+
+= link_to "Home", root_path
+= link_to "編集", edit_job_path(@job)
+= link_to "削除", job_path(@job), method: :delete, data: { confirm: "削除しますか?"}
