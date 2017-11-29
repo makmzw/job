@@ -1,9 +1,10 @@
 = simple_form_for(@job, html: { class: 'form-horizontal'}) do |f|
-  =f.collection_select :category_id, Category.all, :id, :name, {promt: "カテゴリを選択"}
-  = f.input :title, label: "求人タイトル"
-  = f.input :description, label: "求人説明"
-  = f.input :company, label: "会社名"
-  = f.input :url, label: "求人リンク"
-  %br/
-  = f.button :submit
-  
+	= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category" }, input_html: { class: "dropdown-toggle" }
+    
+    
+	= f.input :title, label: "求人タイトル", input_html: { class: "form-control" }
+	= f.input :description, label: "求人説明", input_html: { class: "form-control" }
+	= f.input :company, label: "会社名", input_html: { class: "form-control" }
+	= f.input :url, label: "求人リンク", input_html: { class: "form-control" }
+	%br/
+	= f.button :submit, "作成", { class: "btn-primary" }

@@ -1,7 +1,11 @@
-%h1= @job.title
-%p= @job.description
-%p= @job.company
+#jobs
+  .job
+    %h3= @job.title
+    %p= @job.description
+    %p= @job.company
+    %button.btn.btn-default= link_to "今すぐ応募する", @job.url
 
-= link_to "Home", root_path
-= link_to "編集", edit_job_path(@job)
-= link_to "削除", job_path(@job), method: :delete, data: { confirm: "削除しますか?"}
+#links
+= link_to "戻る", root_path, class: "btn btn-sm btn-default"
+= link_to "編集", edit_job_path(@job), class: "btn btn-sm btn-default"
+= link_to "削除", job_path(@job), method: :delete, data: { confirm: "削除しますか?"}, class: "btn btn-sm btn-default"
